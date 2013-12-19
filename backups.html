@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<title ng-cloak>Backup Info For {{space.name}}</title>
+<link rel="stylesheet" href="/bags/common/tiddlers/normalize.css">
+<link rel="stylesheet" href="/backups.css">
+</head>
+<body ng-controller="BackupsCtrl">
+<header>
+    <div>
+        <h1 ng-cloak>Backup Info For {{space.name}}</h1>
+    </div>
+</header>
+<article>
+<div class="intro">
+    <p>This is a single page application that presents information about
+    backing up the content of a space, public and private. It also provides
+    links for doing a quick backup of <em>only</em> the latest revisions of
+    all your tiddlers. If you need something more complex, hopefully some of
+    the information provided here can guide you.</p>
+</div>
+<div class="warning" ng-show="space.isSelf">
+    <p>Note: In order for the backup links to display, you must include the
+    <strong>backups</strong> space in your space, via the <em>space control
+    panel</em> found by visiting the blue and pink dot in the upper right
+    when viewing your space.</p>
+</div>
+<div class="meat">
+    <p><a href="#downloads">Go straight to the links.</a></p>
+    <h1>About Backups</h1>
+    <p>Put the info or links to it here.</p>
+    <p>Kitty ipsum dolor sit amet, lay down in your way
+       sleep in the sink sniff biting bat scratched,
+       stretching stretching lay down in your way sleep in
+       the sink. Zzz purr jump scratched, sleep in the sink
+       eat the grass litter box lay down in your way litter
+       box leap. Tail flick give me fish chase the red dot
+       sleep on your keyboard run, zzz sleep on your face
+       feed me kittens run purr sleep in the sink. Toss the
+       mousie sunbathe hiss attack your ankles rip the
+       couch, sleep in the sink chase the red dot sniff
+       attack your ankles shed everywhere puking eat. Leap
+       tail flick chase the red dot sleep on your face jump
+       knock over the lamp, puking lay down in your way claw
+       tail flick puking purr. Catnip climb the curtains
+       litter box sleep on your keyboard, lick lay down in
+       your way toss the mousie chase the red dot jump purr.
+       Judging you sleep in the sink stretching jump on the
+       table, leap lay down in your way sunbathe sleep in
+       the sink sleep in the sink zzz litter box hairball.
+       </p><p>Zzz knock over the lamp feed me zzz, eat the
+       grass sunbathe sleep in the sink knock over the lamp
+       feed me run. Sleep on your face purr eat the grass
+       stretching attack, hairball sleep in the sink puking
+       I don't like that food knock over the lamp meow zzz.
+       Lay down in your way leap bat knock over the lamp
+       hairball, judging you purr chase the red dot lick
+       litter box. Claw fluffy fur I don't like that food
+       chuf, chuf attack your ankles jump chuf lay down in
+       your way tail flick purr. Run attack toss the mousie
+       meow hiss chuf, kittens sunbathe fluffy fur stuck in
+       a tree chuf tail flick. Purr attack your ankles sleep
+       on your keyboard fluffy fur catnip, rip the couch rip
+       the couch hiss chase the red dot knock over the lamp
+       sleep on your keyboard scratched. Toss the mousie
+       judging you run attack your ankles, sunbathe toss the
+       mousie puking shed everywhere sleep in the sink
+       biting. </p><p>Sniff sunbathe feed me purr, lay down
+       in your way sleep on your keyboard bat tail flick
+       attack your ankles sunbathe jump on the table lick.
+       Knock over the lamp I don't like that food chase the
+       red dot feed me sleep in the sink, give me fish sleep
+       on your face attack judging you feed me. Sunbathe
+       judging you meow I don't like that food, eat sniff
+       attack your ankles tail flick lay down in your way
+       sleep on your face puking attack. Lick attack your
+       ankles chuf puking climb the curtains biting, jump
+       chase the red dot jump on the table jump. Meow give
+       me fish run lay down in your way catnip, biting stuck
+       in a tree shed everywhere sleep in the sink sleep in
+       the sink sunbathe. Give me fish attack sleep on your
+       face give me fish lay down in your way jump on the
+       table, run hiss tail flick stretching eat give me
+       fish. </p>
+   </div>
+   <div id="downloads" ng-cloak ng-show="space.notSelf" class="actions">
+       <h1>Download</h1>
+    <p>Right click the following links to save all the tiddlers from your
+    {{ space.name }} to different files, one for public and one for private.
+    Keep in mind that this is <em>only</em> the latest revisions of the tiddlers
+    in the space. If you have a large number of tiddlers these will be
+    a very large files.</p>
+    <p>In some modern browsers with support for the <code>download</code>
+    attribute a standard click will work.</p>
+    <a class="downlink public" download href="/bags/{{ space.publicBag }}/tiddlers.json?fat=1">Public Tiddlers</a>
+    <a class="downlink private" download href="/bags/{{ space.privateBag }}/tiddlers.json?fat=1">Private Tiddlers</a>
+</div>
+<div ng-cloak ng-show="space.isSelf" class="actions">
+    Include this space (<strong>backups</strong>) in your space to display
+    backup links here.
+</div>
+</article>
+<footer>
+    <p>Another fine <a href="//tiddlyspace.com">TiddlySpace</a> <a href="//tsapp.tiddlyspace.com">tsapp</a> from <a href="//cdent.tiddlyspace.com/">cdent</a>.</p>
+</footer>
+<script src="/status.js"></script>
+<script src="/bags/backups_public/tiddlers/angular.js"></script>
+<script src="/bags/backups_public/tiddlers/backups.js"></script>
+<script src="/bags/common/tiddlers/backstage.js"></script>
+</body>
+</html>
