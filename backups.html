@@ -26,7 +26,7 @@
     when viewing your space.</p>
 </div>
 <div class="meat">
-    <p><a href="#downloads">Go straight to the links.</a></p>
+    <p ng-show="space.notSelf"><a href="#downloads">Go straight to the links.</a></p>
     <h1>About Backups</h1>
     <p>Put the info or links to it here.</p>
     <p>Kitty ipsum dolor sit amet, lay down in your way
@@ -92,8 +92,9 @@
     a very large files.</p>
     <p>In some modern browsers with support for the <code>download</code>
     attribute a standard click will work.</p>
-    <a class="downlink public" download href="/bags/{{ space.publicBag }}/tiddlers.json?fat=1">Public Tiddlers</a>
-    <a class="downlink private" download href="/bags/{{ space.privateBag }}/tiddlers.json?fat=1">Private Tiddlers</a>
+    <a ng-show="space.isMember" class="downlink public" download="{{space.publicFileName}}" href="/bags/{{ space.publicBag }}/tiddlers.json?fat=1">Public Tiddlers</a>
+    <a ng-show="space.isMember" class="downlink private" download={{space.privateFileName}}" href="/bags/{{ space.privateBag }}/tiddlers.json?fat=1">Private Tiddlers</a>
+    <p>No links? Are you sure you are logged in or a member of this space?</p>
 </div>
 <div ng-cloak ng-show="space.isSelf" class="actions">
     Include this space (<strong>backups</strong>) in your space to display
