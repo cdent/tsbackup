@@ -8,8 +8,8 @@ app.controller('BackupsCtrl', ['$scope', function($scope) {
 	space.name = name;
 	space.publicBag = space.name + '_public';
 	space.privateBag = space.name + '_private';
-	space.publicFileName = space.publicBag + '-' + timeStamp + '.json';
-	space.privateFileName = space.privateBag + '-' + timeStamp + '.json';
+	space.publicFileName = space.publicBag + '-' + timeStamp;
+	space.privateFileName = space.privateBag + '-' + timeStamp;
 	space.isSelf = (space.name === 'backups');
 	space.notSelf = !space.isSelf;
 	space.isMember = isMember;

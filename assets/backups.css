@@ -4,7 +4,7 @@ html {
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
+    display: none !important;
 }
 
 #app-picker {
@@ -46,23 +46,27 @@ a:hover {
 }
 
 article {
-	width: 50%;
+    width: 50%;
     margin: 0 auto 0 auto;
 }
 
+.downlinks p {
+    padding-bottom: 1em;
+}
+
 .downlink {
-	border: thin solid black;
-	border-radius: .5em;
-	padding: .5em 2em .5em 2em;
-	color: black;
+    border: thin solid black;
+    border-radius: .5em;
+    padding: .5em 2em .5em 2em;
+    color: black;
 }
 
 .public {
-	background-color: blue;
+    background-color: #c1e6fd;
 }
 
 .private {
-	background-color: red;
+    background-color: #f4c4e2;
 }
 
 footer {
@@ -72,7 +76,7 @@ footer {
 }
 
 @media all and (max-width: 700px) {
-	article {
-		width: 90%;
-	}
+    article {
+        width: 90%;
+    }
 }
